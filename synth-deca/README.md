@@ -1,6 +1,8 @@
 # ZX Spectrum Next - Deca port
 
-01/04/22 DECA port by Shaeon and Somhic from Unamiga Reloaded core https://github.com/benitoss/ZX_Spectrum_Next_FPGA-3.01.09 by  @benitoss
+01/04/22 DECA port by Shaeon and Somhic from Unamiga Reloaded core https://github.com/benitoss/ZX_Spectrum_Next_FPGA-3.01.09 by  Fernando Mosquera @benitoss
+
+Original source https://www.specnext.com/
 
 **THIS PORT ONLY USES SRAM MEMORY. IT WORKS WELL WITH A DUAL SDRAM+SRAM MISTER MODULE WITH SEPARATED DQMH/L SIGNALS (3 extra pins)**. 
 
@@ -20,6 +22,7 @@
 - SDRAM+SRAM dual module
   - Tested with a dual memory module v1.3 with 3 pins ([see connections](https://github.com/SoCFPGA-learning/DECA/tree/main/Projects/sdram_mister_deca) + [3pins](https://github.com/DECAfpga/DECA_board/blob/main/Sdram_mister_deca/README_3pins.md))
 - PS/2 Keyboard connected to GPIO
+- SD card with the content of https://www.specnext.com/latestdistro/
 
 ##### Versions
 
@@ -40,6 +43,30 @@ Flash bitstream directly from [command line](https://github.com/DECAfpga/DECA_bi
 
 * Load project in Quartus from /deca/[core_name]_deca.qpf
 
+
+
+### ZXNext keys :
+
+F1 HARD RESET
+
+F2 SCANDOUBLER
+
+F3 50HZ/60HZ VF
+
+F4 SOFT RESET
+
+F7 SCANLINES ( 0,25,50,75)
+
+F9 NMI (MULTIFACE)
+
+F10 divMMC NMI (Drive) Simulates pressing the drive button (duvMMC NMI -- used with esxDOS). Holding Caps Shift together forces a rescan of the drives and a reload of the loading screen under esxDOS
+
+### ZXNext **Config file**
+
+https://www.specnext.com/config-file/
+
+
+
 ### Pinout connections:
 
 ![pinout_deca](pinout_deca.png)
@@ -47,4 +74,3 @@ Flash bitstream directly from [command line](https://github.com/DECAfpga/DECA_bi
 MIDI pins are not used in this core.
 
 For 444 video DAC use all VGA pins. For 333 video DAC connect MSB from addon to MSB of location assignment (e.g. connect pin VGAR2 from Waveshare addon to VGA_R[3] Deca pin).
-
